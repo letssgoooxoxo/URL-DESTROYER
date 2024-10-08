@@ -1,0 +1,19 @@
+import os
+
+def main():
+    # Prompt the user to enter a URL (file path)
+    file_path = input("Please enter the file path to delete: ")
+
+    # Check if the file exists
+    if os.path.isfile(file_path):
+        try:
+            # Delete the file
+            os.remove(file_path)
+            print(f"File '{file_path}' has been deleted successfully.")
+        except Exception as e:
+            print(f"An error occurred while trying to delete the file: {e}")
+    else:
+        print(f"The file '{file_path}' does not exist.")
+
+if __name__ == "__main__":
+    main()
